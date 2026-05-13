@@ -21,7 +21,7 @@ def emotion_detector(text_to_analyze):
     fear_score = emotions['fear']
     disgust_score = emotions['disgust']
     sadness_score = emotions['sadness']
-    dominant_emotion = { 'dominant_emotion': 0}
+    dominant_emotion = { 'dominant_emotion': None}
 
     max_score = 0
     for emotion, value in emotions.items():
