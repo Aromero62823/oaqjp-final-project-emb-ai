@@ -1,6 +1,6 @@
 """ This module launches the server """
 
-# Importting the necessary libraries to run the application
+# Importing the necessary libraries to run the application
 from flask import Flask, render_template, request
 # Importing the package that holds the logic to run the api
 from EmotionDetection.emotion_detection import emotion_detector
@@ -24,6 +24,9 @@ def emotion_detector_function():
         'disgust': {emotions['disgust']}, 'fear': {emotions['fear']}, 
         'joy': {emotions['joy']}, 'sadness': {emotions['sadness']}. 
         The dominant emotion is {emotions['dominant_emotion']}."""
+    if emotions['dominant_emotion'] is None:
+        emotion_analysis = "Invalid input! Try again."
+    
     return emotion_analysis
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
